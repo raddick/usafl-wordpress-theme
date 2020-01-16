@@ -1,6 +1,546 @@
+/*!
+Theme Name: USAFL wordpress theme
+Theme URI: https://github.com/raddick/usafl-wordpress-theme/
+Author: Jordan Raddick
+Author URI: www.jordanraddick.com
+Description: Derived from Miniva (https://tajam.id/miniva/): A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: miniva
+Tags: accessibility-ready, blog, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, grid-layout, left-sidebar, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, two-columns
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Miniva is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+	## Post Navigation
+	## Social Navigation
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Site
+# Header
+# Footer
+# Content
+	## Posts and pages
+	## Grid Layout
+	## Author Bio
+	## Comments
+	## Comment Form
+	## Featured Content
+	## Welcome Text
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Plugins
+	## Breadcrumb NavXT
+	## Contact Form 7
+	## MailChimp for WordPress
+	## WP-PostViews
+	## Flex Posts
+# Blocks
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 1.5em;
+  border: 1px solid #ddd;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  clear: both;
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 0 1.5em;
+  padding: 0 1em;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #767676;
+  border-left: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+abbr[title], acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+  text-decoration: none;
+}
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: #eee;
+  /* Fallback for when there is no custom background color defined. */
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+ul, ol {
+  margin: 0 0 1.5em 0;
+  padding-left: 1.5em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0.4em;
+  border-bottom: 1px solid #eee;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background: #f5f5f5;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 0.6em 1em;
+}
+
+button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+button:active, button:focus,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=reset]:active,
+input[type=reset]:focus,
+input[type=submit]:active,
+input[type=submit]:focus {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
+textarea {
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
+textarea:focus {
+  color: #111;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+::-moz-placeholder {
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: #ce405a;
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  color: #000;
+}
+
+a:focus {
+  outline: 2px solid #333;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
+
+.entry-content a,
+.textwidget a,
+.comment-content a {
+  text-decoration: underline;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -14,43 +554,43 @@
   .main-navigation {
     margin-bottom: 1em;
   }
+
+  .js .main-navigation ul {
+    display: none;
+  }
+
+  .main-navigation .primary-menu {
+    border-bottom: 1px solid #eee;
+    margin-top: 20px;
+  }
+
+  .main-navigation li {
+    text-align: left;
+    border-top: 1px solid #eee;
+  }
+
+  .main-navigation li li {
+    padding-left: 20px;
+  }
+
   .main-navigation a {
     color: #666;
     display: block;
     padding-top: 8px;
     padding-bottom: 8px;
   }
-  .main-navigation a :hover {
-    color: #000;
-  }
-  .main-navigation li {
-    text-align: left;
-    border-top: 1px solid #eee;
-  }
-  .main-navigation li li {
-    padding-left: 20px;
-  }
-  .main-navigation .primary-menu {
-    border-bottom: 1px solid #eee;
-    margin-top: 20px;
-  }
-  .main-navigation .primary-menu ul .toggled {
-    display: block;
-  }
-  .main-navigation .primary-menu li {
-    position: relative;
-  }
-  .main-navigation .primary-menu .menu-item-has-children a, .main-navigation .primary-menu .page-item-has-children a {
-    padding-right: 40px;
-  }
 
-  .js .main-navigation ul {
-    display: none;
+  .main-navigation a:hover {
+    color: #000;
   }
 
   .header-search {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  .primary-menu li {
+    position: relative;
   }
 
   .submenu-toggle {
@@ -65,14 +605,26 @@
     padding: 0;
     border: 0;
   }
+
   .submenu-toggle .icon {
     opacity: 0.5;
   }
+
   .submenu-toggle.toggled .icon {
     transform: rotate(-180deg);
   }
+
   .submenu-toggle.toggled + .sub-menu {
     display: block;
+  }
+
+  .primary-menu ul.toggled {
+    display: block;
+  }
+
+  .primary-menu .menu-item-has-children > a,
+.primary-menu .page_item_has_children > a {
+    padding-right: 40px;
   }
 
   .no-js .menu-toggle {
@@ -478,547 +1030,6 @@ a.page-numbers:hover {
 
 .jetpack-social-navigation a:hover {
   color: #ce405a;
-}
-
-/*!
-Theme Name: USAFL wordpress theme
-Theme URI: https://github.com/raddick/usafl-wordpress-theme/
-Author: Jordan Raddick
-Author URI: www.jordanraddick.com
-Description: Derived from Miniva (https://tajam.id/miniva/): A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: miniva
-Tags: accessibility-ready, blog, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, grid-layout, left-sidebar, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, two-columns
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Miniva is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-   ## Links
-# Forms
-# Navigation
-	## Links
-	## Menus
-	## Post Navigation
-	## Social Navigation
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Site
-# Header
-# Footer
-# Content
-	## Posts and pages
-	## Grid Layout
-	## Author Bio
-	## Comments
-	## Comment Form
-	## Featured Content
-	## Welcome Text
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
-# Plugins
-	## Breadcrumb NavXT
-	## Contact Form 7
-	## MailChimp for WordPress
-	## WP-PostViews
-	## Flex Posts
-# Blocks
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-a {
-  background-color: transparent;
-}
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-img {
-  border-style: none;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-button,
-input {
-  overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: 1.5em;
-  border: 1px solid #ddd;
-}
-
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-textarea {
-  overflow: auto;
-}
-
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-details {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-  color: #222;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #000;
-  clear: both;
-  margin-top: 0;
-}
-
-p {
-  margin: 0 0 1.5em;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-dfn, cite, em, i {
-  font-style: italic;
-}
-
-blockquote {
-  margin: 0 0 1.5em;
-  padding: 0 1em;
-  font-size: 1.1em;
-  font-style: italic;
-  color: #767676;
-  border-left: 5px solid rgba(0, 0, 0, 0.1);
-}
-
-address {
-  margin: 0 0 1.5em;
-}
-
-pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
-}
-
-code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
-}
-
-abbr[title], acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
-  text-decoration: none;
-}
-
-mark, ins {
-  background: #fff9c0;
-  text-decoration: none;
-}
-
-big {
-  font-size: 125%;
-}
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
-}
-
-body {
-  background: #eee;
-  /* Fallback for when there is no custom background color defined. */
-  -ms-word-wrap: break-word;
-  word-wrap: break-word;
-}
-
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
-}
-
-ul, ol {
-  margin: 0 0 1.5em 0;
-  padding-left: 1.5em;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
-}
-
-li > ul,
-li > ol {
-  margin: 0;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin: 0 1.5em 1.5em;
-}
-
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
-}
-
-figure {
-  margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */
-}
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-th {
-  text-align: left;
-  font-weight: bold;
-}
-
-th,
-td {
-  padding: 0.4em;
-  border-bottom: 1px solid #eee;
-}
-
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-  color: #ce405a;
-  text-decoration: none;
-  transition: all 0.1s linear;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover, a:focus, a:active {
-  color: #000;
-}
-
-a:focus {
-  outline: 2px solid #333;
-}
-
-a:hover, a:active {
-  outline: 0;
-}
-
-.entry-content a,
-.textwidget a,
-.comment-content a {
-  text-decoration: underline;
-}
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  background: #f5f5f5;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1;
-  padding: 0.6em 1em;
-}
-
-button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-button:active, button:focus,
-input[type=button]:active,
-input[type=button]:focus,
-input[type=reset]:active,
-input[type=reset]:focus,
-input[type=submit]:active,
-input[type=submit]:focus {
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=number],
-input[type=tel],
-input[type=range],
-input[type=date],
-input[type=month],
-input[type=week],
-input[type=time],
-input[type=datetime],
-input[type=datetime-local],
-input[type=color],
-textarea {
-  color: #666;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 3px;
-}
-
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-input[type=search]:focus,
-input[type=number]:focus,
-input[type=tel]:focus,
-input[type=range]:focus,
-input[type=date]:focus,
-input[type=month]:focus,
-input[type=week]:focus,
-input[type=time]:focus,
-input[type=datetime]:focus,
-input[type=datetime-local]:focus,
-input[type=color]:focus,
-textarea:focus {
-  color: #111;
-}
-
-select {
-  border: 1px solid #ccc;
-}
-
-textarea {
-  width: 100%;
-}
-
-::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-
-::-moz-placeholder {
-  opacity: 0.5;
-}
-
-:-ms-input-placeholder {
-  opacity: 0.5;
 }
 
 /*--------------------------------------------------------------
