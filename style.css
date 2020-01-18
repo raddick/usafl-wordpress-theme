@@ -1,10 +1,10 @@
 /*
-Theme Name: Miniva
-Theme URI: https://tajam.id/miniva/
-Author: Tajam
-Author URI: https://tajam.id/
-Description: A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
-Version: 1.5.0
+Theme Name: USAFL wordpress theme
+Theme URI: https://github.com/raddick/usafl-wordpress-theme/
+Author: Jordan Raddick
+Author URI: www.jordanraddick.com
+Description: Derived from Miniva (https://tajam.id/miniva/): A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: miniva
@@ -564,6 +564,17 @@ a:hover, a:active {
     margin-top: 20px;
   }
 
+  .primary-menu .current_page_ancestor > a,
+.primary-menu .current-menu-ancestor > a {
+    background-color: #f37121;
+    padding-left: 0.6em;
+  }
+
+  .primary-menu .current_page_item > a,
+.primary-menu .current-menu-item > a {
+    color: #f37121;
+  }
+
   .main-navigation li {
     text-align: left;
     border-top: 1px solid #eee;
@@ -574,16 +585,15 @@ a:hover, a:active {
   }
 
   .main-navigation a {
-    color: #666;
+    color: #ffffff;
     display: block;
     padding-top: 8px;
     padding-bottom: 8px;
   }
 
-  .main-navigation a:hover {
-    color: #000;
-  }
-
+  /*	.main-navigation a:hover {
+  		color: get-theme-color-shifted('primary', 40);
+  	}*/
   .header-search {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -607,7 +617,7 @@ a:hover, a:active {
   }
 
   .submenu-toggle .icon {
-    opacity: 0.5;
+    fill: #ffffff;
   }
 
   .submenu-toggle.toggled .icon {
@@ -1175,7 +1185,7 @@ a.page-numbers:hover {
 
 .search-form .search-submit {
   display: table-cell;
-  background-color: #ce405a;
+  background-color: #f37121;
   border: none;
   padding: 9px;
   border-radius: 0 3px 3px 0;
@@ -1194,10 +1204,9 @@ a.page-numbers:hover {
   vertical-align: middle;
 }
 
-.search-form .search-submit:hover {
-  opacity: 0.9;
-}
-
+/*.search-form .search-submit:hover {
+	opacity: 0.9;
+}*/
 .search-form {
   max-width: 300px;
   display: table;
@@ -2206,7 +2215,7 @@ button[type=submit] {
 #submit:hover,
 input[type=submit]:hover,
 button[type=submit]:hover {
-  background-color: #a22a40;
+  background-color: #cf601c;
 }
 
 /*--------------------------------------------------------------
