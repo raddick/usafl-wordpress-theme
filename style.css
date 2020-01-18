@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name: Miniva
 Theme URI: https://tajam.id/miniva/
 Author: Tajam
@@ -642,7 +642,7 @@ a:hover, a:active {
 }
 @media (min-width: 768px) {
   .primary-menu ul {
-    background-color: #333;
+    background-color: #000000;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 100%;
@@ -651,7 +651,7 @@ a:hover, a:active {
   }
 
   .submenu-light .primary-menu ul {
-    background-color: #f4f4f4;
+    background-color: #000000;
   }
 
   .primary-menu ul ul {
@@ -672,12 +672,12 @@ a:hover, a:active {
     width: 200px;
     padding: 10px 16px;
     font-size: 0.9em;
-    color: #aaa;
+    color: #ffffff;
     line-height: 1.4;
   }
 
   .submenu-light .primary-menu ul a {
-    color: #888;
+    color: #ffffff;
   }
 
   .primary-menu ul a:focus {
@@ -685,12 +685,15 @@ a:hover, a:active {
   }
 
   .primary-menu ul li:hover > a,
-.primary-menu ul li.focus > a,
-.primary-menu ul li.current_page_item > a,
+.primary-menu ul li.focus > a {
+    color: #f8aa7a;
+  }
+
+  .primary-menu ul li.current_page_item > a,
 .primary-menu ul li.current-menu-item > a,
 .primary-menu ul li.current_page_ancestor > a,
 .primary-menu ul li.current-menu-ancestor > a {
-    color: #fff;
+    color: #c25a1a;
   }
 
   .submenu-light .primary-menu ul li:hover > a,
@@ -699,7 +702,7 @@ a:hover, a:active {
 .submenu-light .primary-menu ul li.current-menu-item > a,
 .submenu-light .primary-menu ul li.current_page_ancestor > a,
 .submenu-light .primary-menu ul li.current-menu-ancestor > a {
-    color: #333;
+    color: #ffffff;
   }
 
   .primary-menu li:hover > ul,
@@ -734,7 +737,7 @@ a:hover, a:active {
   .primary-menu a {
     display: block;
     text-decoration: none;
-    color: #555;
+    color: #ffffff;
   }
 
   .primary-menu > li > a {
@@ -742,7 +745,7 @@ a:hover, a:active {
     line-height: 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.8em;
+    font-size: 0.875em;
     padding: 0 10px;
     margin: 12px 0;
     border-radius: 20px;
@@ -780,12 +783,13 @@ a:hover, a:active {
 .primary-menu > li.current_page_item > a,
 .primary-menu > li.current_page_ancestor > a,
 .primary-menu > li.current-menu-ancestor > a {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: #f37121;
   }
 
   .primary-menu > li:hover > a {
-    color: #fff;
-    background-color: #ce405a;
+    color: #ffffff;
+    background-color: #f9b890;
+    color: #000000;
   }
 
   li.header-search {
@@ -849,7 +853,7 @@ a:hover, a:active {
     left: 12px;
     top: 15px;
     cursor: pointer;
-    fill: #888;
+    fill: #f37121;
   }
 }
 @media (min-width: 992px) {
@@ -1561,6 +1565,7 @@ a.rsswidget img {
 
 p.site-description {
   margin: 0.2em 0 0.5em;
+  padding-left: 0.2em;
   font-size: 0.9em;
   line-height: 1.2;
   color: #ffffff;

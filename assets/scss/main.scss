@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name: Miniva
 Theme URI: https://tajam.id/miniva/
 Author: Tajam
@@ -665,7 +665,7 @@ a:hover, a:active {
 
 @media (min-width: 768px) {
 	.primary-menu ul {
-		background-color: #333;
+		background-color: get-theme-color('background');
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 		position: absolute;
 		top: 100%;
@@ -674,7 +674,7 @@ a:hover, a:active {
 	}
 
 	.submenu-light .primary-menu ul {
-		background-color: #f4f4f4;
+		background-color: get-theme-color('background');
 	}
 
 	.primary-menu ul ul {
@@ -695,12 +695,12 @@ a:hover, a:active {
 		width: 200px;
 		padding: 10px 16px;
 		font-size: 0.9em;
-		color: #aaa;
+		color: get-theme-color('secondary');
 		line-height: 1.4;
 	}
 
 	.submenu-light .primary-menu ul a {
-		color: #888;
+		color: get-theme-color('secondary'); 
 	}
 
 	.primary-menu ul a:focus {
@@ -708,12 +708,15 @@ a:hover, a:active {
 	}
 
 	.primary-menu ul li:hover > a,
-	.primary-menu ul li.focus > a,
+	.primary-menu ul li.focus > a {
+		color: get-theme-color-shifted('primary', 40); 
+	}
+
 	.primary-menu ul li.current_page_item > a,
 	.primary-menu ul li.current-menu-item > a,
 	.primary-menu ul li.current_page_ancestor > a,
 	.primary-menu ul li.current-menu-ancestor > a {
-		color: #fff;
+		color: get-theme-color-shifted('primary', -20); 
 	}
 
 	.submenu-light .primary-menu ul li:hover > a,
@@ -722,7 +725,7 @@ a:hover, a:active {
 	.submenu-light .primary-menu ul li.current-menu-item > a,
 	.submenu-light .primary-menu ul li.current_page_ancestor > a,
 	.submenu-light .primary-menu ul li.current-menu-ancestor > a {
-		color: #333;
+		color: get-theme-color('secondary'); 
 	}
 
 	.primary-menu li:hover > ul,
@@ -757,7 +760,7 @@ a:hover, a:active {
 	.primary-menu a {
 		display: block;
 		text-decoration: none;
-		color: #555;
+		color: get-theme-color('secondary'); 
 	}
 
 	.primary-menu > li > a {
@@ -765,7 +768,7 @@ a:hover, a:active {
 		line-height: 25px;
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		font-size: 0.8em;
+		font-size: 0.875em;
 		padding: 0 10px;
 		margin: 12px 0;
 		border-radius: 20px;
@@ -803,12 +806,13 @@ a:hover, a:active {
 	.primary-menu > li.current_page_item > a,
 	.primary-menu > li.current_page_ancestor > a,
 	.primary-menu > li.current-menu-ancestor > a {
-		background-color: rgba(0, 0, 0, 0.04);
+		background-color: get-theme-color('primary');
 	}
 
 	.primary-menu > li:hover > a {
-		color: #fff;
-		background-color: #ce405a;
+		color: get-theme-color('secondary');
+		background-color: get-theme-color-shifted('primary', 50); //#ce405a;
+		color: get-theme-color('background');
 	}
 
 	li.header-search {
@@ -872,7 +876,7 @@ a:hover, a:active {
 		left: 12px;
 		top: 15px;
 		cursor: pointer;
-		fill: #888;
+		fill: get-theme-color('primary');
 	}
 }
 
@@ -1595,6 +1599,7 @@ a.rsswidget img {
 
 p.site-description {
 	margin: 0.2em 0 0.5em;
+	padding-left: 0.2em;
 	font-size: 0.9em;
 	line-height: 1.2;
 	color: get-theme-color('secondary');
