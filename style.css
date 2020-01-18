@@ -1,10 +1,10 @@
 /*!
-Theme Name: USAFL wordpress theme
-Theme URI: https://github.com/raddick/usafl-wordpress-theme/
-Author: Jordan Raddick
-Author URI: www.jordanraddick.com
-Description: Derived from Miniva (https://tajam.id/miniva/): A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
-Version: 1.0.0
+Theme Name: Miniva
+Theme URI: https://tajam.id/miniva/
+Author: Tajam
+Author URI: https://tajam.id/
+Description: A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: miniva
@@ -1506,6 +1506,7 @@ a.rsswidget img {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #000000;
 }
 
 .logo-top .site-header {
@@ -1547,21 +1548,22 @@ a.rsswidget img {
   font-size: 3em;
   line-height: 1;
   font-weight: 300;
-  letter-spacing: 6px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #f37121;
 }
 
 .site-title a {
-  color: #000;
+  color: inherit;
   text-decoration: none;
   display: block;
 }
 
 p.site-description {
   margin: 0.2em 0 0.5em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.2;
-  opacity: 0.6;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {

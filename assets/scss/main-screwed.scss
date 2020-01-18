@@ -1,10 +1,10 @@
 /*!
-Theme Name: Miniva
-Theme URI: https://tajam.id/miniva/
-Author: Tajam
-Author URI: https://tajam.id/
-Description: A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
-Version: 1.5.0
+Theme Name: USAFL wordpress theme
+Theme URI: https://github.com/raddick/usafl-wordpress-theme/
+Author: Jordan Raddick
+Author URI: www.jordanraddick.com
+Description: Derived from Miniva (https://tajam.id/miniva/): A fast, lightweight, and mobile-friendly WordPress theme for bloggers. Miniva is built with simplicity, accessibility and performance in mind. The clean and minimal design helps readers focus on your content. It supports AMP and several Jetpack modules including featured content, infinite scroll, content options and social menu. See the theme demo at https://tajam.id/miniva-demo/
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: miniva
@@ -20,6 +20,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+
 $theme-colors: (
   'primary': #f37121, 
   'accent': #d98328,
@@ -28,7 +29,7 @@ $theme-colors: (
   'background': #000000
 );
 
-$color-interval: 1%;
+$color-interval: 10%;
 
 @function get-theme-color($key: 'primary') {
   @return map-get($theme-colors, $key);
@@ -40,6 +41,9 @@ $color-interval: 1%;
 
   @return mix($color-base, $color, abs($level) * $color-interval);
 }
+
+
+//@use "variables";
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -279,7 +283,8 @@ select,
 optgroup,
 textarea {
 	color: #222;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+//	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.6;
@@ -362,6 +367,7 @@ html {
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
+
 
 body {
 	background: #eee;
@@ -665,7 +671,7 @@ a:hover, a:active {
 
 @media (min-width: 768px) {
 	.primary-menu ul {
-		background-color: #333;
+		background-color: get-theme-color('background'); 
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 		position: absolute;
 		top: 100%;
@@ -674,7 +680,7 @@ a:hover, a:active {
 	}
 
 	.submenu-light .primary-menu ul {
-		background-color: #f4f4f4;
+		background-color: get-theme-color('secondary'); 
 	}
 
 	.primary-menu ul ul {
@@ -695,25 +701,23 @@ a:hover, a:active {
 		width: 200px;
 		padding: 10px 16px;
 		font-size: 0.9em;
-		color: #aaa;
+		color: get-theme-color('secondary'); 
 		line-height: 1.4;
 	}
 
 	.submenu-light .primary-menu ul a {
-		color: #888;
+		color: get-theme-color('secondary');
 	}
 
 	.primary-menu ul a:focus {
 		outline: thin dotted;
 	}
 
-	.primary-menu ul li:hover > a,
-	.primary-menu ul li.focus > a,
 	.primary-menu ul li.current_page_item > a,
 	.primary-menu ul li.current-menu-item > a,
 	.primary-menu ul li.current_page_ancestor > a,
 	.primary-menu ul li.current-menu-ancestor > a {
-		color: #fff;
+		color: get-theme-color-shifted('primary', 0);
 	}
 
 	.submenu-light .primary-menu ul li:hover > a,
@@ -722,7 +726,7 @@ a:hover, a:active {
 	.submenu-light .primary-menu ul li.current-menu-item > a,
 	.submenu-light .primary-menu ul li.current_page_ancestor > a,
 	.submenu-light .primary-menu ul li.current-menu-ancestor > a {
-		color: #333;
+		color: get-theme-color-shifted('primary', 2);
 	}
 
 	.primary-menu li:hover > ul,
@@ -757,7 +761,7 @@ a:hover, a:active {
 	.primary-menu a {
 		display: block;
 		text-decoration: none;
-		color: #555;
+		color: get-theme-color('secondary');
 	}
 
 	.primary-menu > li > a {
@@ -765,7 +769,7 @@ a:hover, a:active {
 		line-height: 25px;
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		font-size: 0.8em;
+		font-size: 0.95em;
 		padding: 0 10px;
 		margin: 12px 0;
 		border-radius: 20px;
@@ -803,12 +807,7 @@ a:hover, a:active {
 	.primary-menu > li.current_page_item > a,
 	.primary-menu > li.current_page_ancestor > a,
 	.primary-menu > li.current-menu-ancestor > a {
-		background-color: rgba(0, 0, 0, 0.04);
-	}
-
-	.primary-menu > li:hover > a {
-		color: #fff;
-		background-color: #ce405a;
+		background-color: get-theme-color-shifted('primary', 0);
 	}
 
 	li.header-search {
@@ -1556,6 +1555,7 @@ a.rsswidget img {
 	display: inline-block;
 	vertical-align: middle;
 	max-width: 100%;
+	color: get-theme-color('secondary');
 }
 
 .logo-centered .site-branding,
@@ -1584,7 +1584,8 @@ a.rsswidget img {
 	font-weight: 300;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
-	color: get-theme-color('primary');
+	color: get-theme-color('primary');	
+//	background-color: pink;
 }
 
 .site-title a {
@@ -1595,9 +1596,11 @@ a.rsswidget img {
 
 p.site-description {
 	margin: 0.2em 0 0.5em;
-	font-size: 0.9em;
+	padding-left: 0.18em;
+	font-size: 0.95em;
 	line-height: 1.2;
 	color: get-theme-color('secondary');
+//	background-color: cyan;
 }
 
 @media (min-width: 768px) {
