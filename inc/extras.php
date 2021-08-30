@@ -254,11 +254,11 @@ add_action( 'miniva_header_after', 'miniva_welcome_text', 11 );
  * Insert footer site info.
  */
 function miniva_site_info() {
-	echo esc_html__( 'Powered by', 'miniva' );
+	//echo esc_html__( 'Powered by', 'miniva' );
 	?>
-	<a href="<?php echo esc_url( __( 'https://tajam.id/miniva/', 'miniva' ) ); ?>">
+	<!--<a href="<?php echo esc_url( __( 'https://tajam.id/miniva/', 'miniva' ) ); ?>">
 		<?php esc_html_e( 'Miniva WordPress Theme', 'miniva' ); ?>
-	</a>
+	</a>-->
 	<?php
 }
 add_action( 'miniva_site_info', 'miniva_site_info' );
