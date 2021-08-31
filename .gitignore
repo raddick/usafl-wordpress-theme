@@ -24,4 +24,7 @@ node_modules/
 
 # ignore the output of the sass compilation
 css/main.css
-css/main.css.map 
+css/main.css.map
+
+# ignore package management bullshit
+node_modules/
