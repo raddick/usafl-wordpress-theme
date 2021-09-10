@@ -1,4 +1,9 @@
 <?php
+
+// include custom post type files
+//require_once( get_template_directory() . 'lib/custom_post_types.php' );
+//echo "<h1>Hello world!</h1>";
+
 /**
  * Miniva functions and definitions
  *

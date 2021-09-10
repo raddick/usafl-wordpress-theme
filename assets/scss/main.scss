@@ -2849,4 +2849,22 @@ p.has-drop-cap::after {
 .has-text-align-right {
   text-align: right; }
 
+.player_information {
+  margin-bottom: 10px;
+  padding: 10px;
+  
+  .player_information_fact {
+     margin-left: 10px;
+
+      .player_information_label {
+          font-weight: bold;  
+       }
+
+      .player_information_data {
+          text-decoration:none;
+      }
+   }
+
+  }
+
 /*# sourceMappingURL=main.css.map */
