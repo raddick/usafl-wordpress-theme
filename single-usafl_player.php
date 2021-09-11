@@ -33,9 +33,6 @@ get_header();
 		<header class="entry-header">
 			<?php
 				$thetitle = get_the_title($post -> ID);
-				//the_title( '<h1 class="entry-title">', '</h1>' );
-//				echo "<h1 font color='red'".$thetitle."</font></h1>";
-
 			?>
 			<h1 class='entry-title'><?php echo $thisplayermeta['number'].". ".$thetitle;?></h1>
 			<?php
