@@ -54,9 +54,11 @@ get_header();
 		<div class="entry-content">
 			<div class="player_information">
 				<div class="player_information_fact">
+					<?php if ($thisplayermeta['age'] != '') { ?>
 					<span class='player_information_label'>Age:</span>
 					<span class= 'player_information_data'><?php echo $thisplayermeta['age'];?></span>
 				</div><!-- .player_information_fact -->
+				 <?php } ?>
 				<div class="player_information_fact">
 					<span class='player_information_label'>Height:</span>
 					<span class= 'player_information_data'><?php echo $thisplayermeta['height'];?></span>
@@ -69,6 +71,10 @@ get_header();
 					<span class='player_information_label'>Position:</span>
 					<span class= 'player_information_data'><?php echo $thisplayermeta['position'];?></span>
 				</div><!-- .player_information_fact -->
+				<div class="player_information_fact">
+					<span class='player_information_label'>Seasons:</span>
+					<span class= 'player_information_data'><?php echo $thisplayermeta['seasons'];?></span>
+				</div><!-- .player_information_fact -->
 			</div><!-- .player_information -->
 
                 <h2>About <?php 
@@ -78,9 +84,12 @@ get_header();
             						echo $thisplayermeta['name_first'];
             					}
                 			?></h2>
-		<?php
-			miniva_the_content(); ?>
-                <div class='player_information_linkback'><a href="localhost/baltimoredockers.com/meet-the-team/">Back to roster page</a></div>
+			<?php miniva_the_content(); ?>
+			<?php if ((get_post_field('menu_order', $post->ID) < 100) || (strpos($thisplayermeta['seasons'], date("y")) !== false)) {   // i.e. if substring is found ?>  
+				<div class='player_information_linkback'><a href="localhost/baltimoredockers.com/roster/">Back to roster page</a></div>
+			<?php } else { ?>
+				<div class='player_information_linkback'><a href="localhost/baltimoredockers.com/alumni/">Back to alumni page</a></div>
+			<?php } ?> 
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
