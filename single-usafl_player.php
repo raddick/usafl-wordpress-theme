@@ -102,12 +102,13 @@ get_header();
 
 	<?php do_action( 'miniva_post_after' ); ?>
 
-		<?php
+	<?php 
+		/*
 			if ( function_exists( 'jetpack_author_bio' ) ) {
 				jetpack_author_bio();
 			}
 
-/*			the_post_navigation(
+			the_post_navigation(
 				array(
 					'prev_text' => '<span>' . __( 'Previous Post', 'miniva' ) . '</span>%title',
 					'next_text' => '<span>' . __( 'Next Post', 'miniva' ) . '</span>%title',

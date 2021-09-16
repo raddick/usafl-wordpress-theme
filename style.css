@@ -444,11 +444,13 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #ce405a;
+  color: 0000EE;
+  /* #ce405a; */
   text-decoration: none;
   transition: all 0.1s linear; }
 
 a:visited {
+  color: #551A8B;
   text-decoration: none; }
 
 a:hover, a:focus, a:active {
