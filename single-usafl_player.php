@@ -54,9 +54,17 @@ get_header();
 		<div class="entry-content">
 			<div class="player_information">
 				<div class="player_information_fact">
-					<?php if ($thisplayermeta['age'] != '') { ?>
+					<?php if ($thisplayermeta['birthdate'] != '') { ?>
 					<span class='player_information_label'>Age:</span>
-					<span class= 'player_information_data'><?php echo $thisplayermeta['age'];?></span>
+					<span class= 'player_information_data'>
+						<?php 
+							$todayis = strtotime(date("Y-m-d"));
+							$timediff = $todayis - strtotime($thisplayermeta['birthdate']);
+							//$theinterval = $todayis->diff($thisplayermeta['birthdate'])->format("%a");
+							echo floor($timediff / (60*60*24*365.25));
+							//echo $todayis . " " .$thisplayermeta['birthdate'] . " // " . $theinterval; //$todayis - $thisplayermeta['birthdate'];
+						?>
+					</span>
 				</div><!-- .player_information_fact -->
 				 <?php } ?>
 				<div class="player_information_fact">
