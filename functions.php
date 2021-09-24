@@ -4,6 +4,23 @@
 //require_once( get_template_directory() . 'lib/custom_post_types.php' );
 //echo "<h1>Hello world!</h1>";
 
+function get_flag_emoji_unicode($this_country) {
+	if ($this_country == 'USA') {
+	    $this_flag = "&#127482;&#127480; ";
+	} elseif ($this_country == 'Australia') {
+		$this_flag = "&#127462;&#127482; ";
+	} elseif ($this_country == 'France') {
+		$this_flag = "&#127467;&#127479; ";
+	} elseif ($this_country == 'Brazil') {
+		$this_flag = "&#127463;&#127479; ";
+	} else {
+		$this_flag = "";
+	}
+
+	return $this_flag;
+	//echo "<h1><font color='dodgerblue'>".$this_country."</font></h1>";
+}
+
 /**
  * Miniva functions and definitions
  *

@@ -73,7 +73,10 @@ get_header();
 				</div><!-- .player_information_fact -->
 				<div class="player_information_fact">
 					<span class='player_information_label'>Nationality:</span>
-					<span class= 'player_information_data'><?php echo $thisplayermeta['nationality'];?></span>
+					<span class= 'player_information_data'><?php 
+						echo get_flag_emoji_unicode($thisplayermeta['nationality']) . $thisplayermeta['nationality'];
+						?>
+					</span>
 				</div><!-- .player_information_fact -->
 				<div class="player_information_fact">
 					<span class='player_information_label'>Position:</span>
