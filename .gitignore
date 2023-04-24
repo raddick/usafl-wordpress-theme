@@ -28,3 +28,6 @@ css/main.css.map
 
 # ignore package management bullshit
 node_modules/
+
+# stupid DS_Store files auto-created by Mac finder
+.DS_Store
