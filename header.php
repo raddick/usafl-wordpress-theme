@@ -60,7 +60,7 @@
 
 		<?php do_action( 'miniva_header_middle' ); ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary', 'miniva' ); ?>">
+		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary', 'miniva' ); ?>">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'miniva' ); ?></button>
 			<?php
 			wp_nav_menu(
