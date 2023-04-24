@@ -1,0 +1,27 @@
+{
+  "name": "usafl-wordpress-theme",
+  "version": "1.0.0",
+  "description": "Packages for building the sass-based theme for baltimoredockers.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raddick/usafl-wordpress-theme.git"
+  },
+  "author": "Jordan Raddick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raddick/usafl-wordpress-theme/issues"
+  },
+  "homepage": "https://github.com/raddick/usafl-wordpress-theme#readme",
+  "dependencies": {
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^6.0.1",
+    "ruby": "^0.6.1",
+    "sass": "^1.41.0"
+  }
+}
