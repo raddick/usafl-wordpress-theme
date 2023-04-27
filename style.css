@@ -1,7 +1,7 @@
 /*
 Theme Name: USAFL wordpress theme
 Theme URI: https://github.com/raddick/usafl-wordpress-theme
-Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Description: Wordpress theme for USAFL websites, child theme of miniva
 Author URI: https://www.jordanraddick.com
 Template: miniva
 Version: 2.0
@@ -9,3 +9,34 @@ Text Domain: usafl-wordpress-theme
 License: BSD 3-Clause License
 License URI: https://opensource.org/license/bsd-3-clause/
 */
+
+.site-header {
+	background-color: #000000;
+}
+.site-branding {
+	text-align: left !important;
+}
+
+.site-title {
+	color: #f37121;	
+}
+	.site-title a {
+		color: inherit;
+	}
+
+.site-description {
+	color: #ffffff;
+}
+	p.site-description {
+		font-size: 1.25rem;
+		margin-left: 0.1rem;
+
+	}
+
+.site-description a {
+	color: inherit;
+}
+
+.main-navigation a {
+	color: #ffffff;
+}
